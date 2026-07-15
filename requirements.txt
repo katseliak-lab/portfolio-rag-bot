@@ -1,0 +1,5 @@
+anthropic>=0.40
+gradio>=4.44
+sentence-transformers>=3.0
+numpy>=1.26
+python-dotenv>=1.0

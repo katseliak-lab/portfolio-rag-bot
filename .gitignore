@@ -1,0 +1,18 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Cached embeddings index
+.cache/
+*.npy
+*.pkl
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
