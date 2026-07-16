@@ -33,13 +33,13 @@ employers, dates, or numbers.
 """
 
 EXAMPLES = [
-    "What has this person worked on recently?",
-    "Which programming languages and tools do they know?",
+    "What has Oleh worked on recently?",
+    "Which tools and languages does he know?",
     "Розкажи про проєкти з автоматизації",
-    "Do they have experience with LLMs or RAG?",
+    "Does he have experience with generative video or voice AI?",
 ]
 
-st.set_page_config(page_title="Ask me about [Your Name]", page_icon="💬")
+st.set_page_config(page_title="Ask me about Oleh Katseliak", page_icon="💬")
 
 
 @st.cache_resource(show_spinner="Loading knowledge base…")
@@ -61,7 +61,7 @@ def get_api_key() -> str | None:
 kb = load_kb()
 api_key = get_api_key()
 
-st.title("💬 Ask me about [Your Name]")
+st.title("💬 Ask me about Oleh Katseliak")
 st.caption(
     "A retrieval-augmented (RAG) assistant grounded in a real knowledge base, "
     "powered by Anthropic Claude. Answers in your language (UK / EN)."

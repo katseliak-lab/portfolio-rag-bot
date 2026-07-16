@@ -1,26 +1,31 @@
 # Skills
 
-<!-- Replace with your real stack. Grouping helps the retriever. -->
+## Core languages
+
+JavaScript (Google Apps Script), Python, HTML / CSS.
+
+## Automation & backend
+
+n8n, Make.com, Google Apps Script, Claude API, Claude Code, Python, AWS.
+
+## APIs & integrations
+
+Slack API, Google Sheets API, Claude API, REST. Concepts: OAuth scopes,
+triggers, error handling.
+
+## Generative AI tools
+
+Midjourney, Nano Banana, Kling, Runway, Seedance, HeyGen, ElevenLabs (voice),
+Suno (music). Image workflows with ComfyUI, ControlNet, SDXL, SD1.5, Flux.
+
+## Creative / production
+
+After Effects, Premiere Pro, Photoshop, Lightroom.
+
+## Frontend
+
+HTML, CSS, JavaScript.
 
 ## Languages
 
-Python (primary), SQL, JavaScript (basic).
-
-## AI / LLM
-
-Anthropic Claude API, OpenAI API, retrieval-augmented generation (RAG),
-sentence-transformers / embeddings, prompt design, LLM evaluation basics.
-
-## Tools & platforms
-
-Git & GitHub, GitHub Actions (CI/CD), Docker (basic), Google Sheets API,
-Hugging Face Spaces, REST APIs.
-
-## Data
-
-pandas, NumPy, data cleaning and pipelines, working with CSV / JSON / RSS feeds.
-
-## Ways of working
-
-Automating repetitive workflows, writing readable and documented code,
-shipping small end-to-end tools rather than unfinished prototypes.
+Ukrainian (native), English.

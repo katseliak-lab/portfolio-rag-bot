@@ -1,20 +1,22 @@
 # Experience
 
-<!-- Replace with your real roles. One `##` heading per role works best. -->
+Around three years working at the intersection of AI development and production —
+building automations, data pipelines, and API integrations, while also producing
+full-cycle AI content (avatars, voice cloning, generative video and images).
 
-## [Job Title] — [Company] (2023 – present)
+## AI Department Lead
 
-- Built internal automation tools in Python that removed [X hours] of manual work
-  per week.
-- Integrated LLM APIs to summarize and classify [documents / tickets / leads].
-- Worked with [databases / APIs / cloud services you used].
+Led an AI department for six months, combining team management with hands-on
+development and production.
 
-## [Earlier Job Title] — [Company] (2021 – 2023)
+## AI Engineer / AI Content Specialist
 
-- [Key responsibility or achievement.]
-- [Another achievement, ideally with a measurable result.]
+Builds automations, data pipelines, and API integrations (n8n, Make.com,
+Google Apps Script, Claude API, Python), and delivers generative AI content —
+avatars, voice cloning, generative video and images.
 
-## Education
+## Broadcast Operator & Motion Designer (earlier career)
 
-- [Degree], [University], [Year].
-- Relevant coursework / certifications: [list].
+Worked in radio broadcast operations and motion design before moving into AI.
+This background in journalism, broadcast, and motion design shapes his structural
+approach to automation architecture.
