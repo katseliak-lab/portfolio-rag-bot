@@ -1,14 +1,3 @@
----
-title: Portfolio RAG Support Bot
-emoji: 💬
-colorFrom: indigo
-colorTo: purple
-sdk: gradio
-sdk_version: 4.44.0
-app_file: app.py
-pinned: false
----
-
 # 💬 Portfolio RAG Support Bot
 
 A retrieval-augmented (RAG) support bot that answers questions about a candidate,
@@ -16,9 +5,7 @@ grounded in a real knowledge base and powered by the **Anthropic Claude API**.
 Ask it about experience, projects, or skills — it answers only from the documents
 it was given, and says so when it doesn't know.
 
-**🔗 Live demo:** [add your Hugging Face Space URL here]
-
-![screenshot](docs/screenshot.png) <!-- optional: add a screenshot -->
+**🔗 Live demo:** [add your Streamlit Cloud URL here]
 
 ## How it works
 
@@ -35,7 +22,7 @@ NumPy cosine search    ──►  retrieve the most relevant chunks
 Anthropic Claude       ──►  answer, constrained to the retrieved context
      │
      ▼
-Gradio chat UI (streamed response)
+Streamlit chat UI (streamed response)
 ```
 
 1. **Ingest** — every Markdown file in `knowledge/` is split into chunks tagged
@@ -54,8 +41,8 @@ Gradio chat UI (streamed response)
 | LLM | Anthropic Claude (`claude-haiku-4-5`) |
 | Embeddings | `sentence-transformers/all-MiniLM-L6-v2` |
 | Retrieval | In-memory NumPy cosine similarity |
-| UI | Gradio `ChatInterface` (streaming) |
-| Hosting | Hugging Face Spaces (free tier) |
+| UI | Streamlit chat (streaming) |
+| Hosting | Streamlit Community Cloud (free) |
 
 The knowledge base is small, so an in-memory vector search is simpler and faster
 to boot than a full vector database. Swapping in FAISS or Chroma is a one-function
@@ -64,14 +51,15 @@ change in `rag.py`.
 ## Run locally
 
 ```bash
-git clone https://github.com/<your-handle>/portfolio-rag-bot
+git clone https://github.com/katseliak-lab/portfolio-rag-bot
 cd portfolio-rag-bot
-python -m venv .venv && . .venv/Scripts/activate   # Windows
+python -m venv .venv && . .venv/Scripts/activate    # Windows
 # python -m venv .venv && source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 
-cp .env.example .env        # then paste your ANTHROPIC_API_KEY into .env
-python app.py               # opens http://127.0.0.1:7860
+# Paste your key into a local secrets file:
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml   # then edit it
+streamlit run streamlit_app.py                                # opens http://localhost:8501
 ```
 
 ## Make it yours
@@ -85,28 +73,31 @@ Replace the placeholder content in `knowledge/` with your own résumé:
 
 No code changes needed — just edit the Markdown and restart.
 
-## Deploy the live demo (Hugging Face Spaces)
+## Deploy the live demo (Streamlit Community Cloud)
 
 1. Push this repo to GitHub.
-2. Create a new **Space** on [huggingface.co/spaces](https://huggingface.co/spaces)
-   → SDK: **Gradio**.
-3. Link it to your GitHub repo (or push the code directly to the Space's git).
-4. In the Space → **Settings → Secrets**, add `ANTHROPIC_API_KEY`.
-5. The Space builds and serves your live demo URL. Put that URL in this README
-   and in your CV.
+2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
+3. **Create app** → pick your `portfolio-rag-bot` repo, branch `main`,
+   main file `streamlit_app.py`.
+4. Open **Advanced settings → Secrets** and add:
+   ```toml
+   ANTHROPIC_API_KEY = "sk-ant-..."
+   ```
+5. **Deploy.** After the build you get a public URL — put it in this README and
+   your CV.
 
 ## Project structure
 
 ```
 portfolio-rag-bot/
-├── app.py            # Gradio UI + Claude generation
-├── rag.py            # chunking, embeddings, retrieval
-├── knowledge/        # the knowledge base (edit these)
+├── streamlit_app.py   # Streamlit UI + Claude generation
+├── rag.py             # chunking, embeddings, retrieval
+├── knowledge/         # the knowledge base (edit these)
 │   ├── about.md
 │   ├── experience.md
 │   ├── projects.md
 │   └── skills.md
 ├── requirements.txt
-├── .env.example
+├── .streamlit/secrets.toml.example
 └── README.md
 ```
